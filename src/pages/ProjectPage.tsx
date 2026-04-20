@@ -164,7 +164,7 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
               </div>
 
               <a 
-                href="https://wa.me/601111697251?text=%5BCPD%5D%20Hi%2C%20I%20am%20interested%20in%20Central%20Park%20Damansara.%20Can%20you%20send%20me%20more%20info%3F%0A%0AMy%20name%20is" 
+                href={`https://wa.me/601111697251?text=${encodeURIComponent(`[CTA] Hi, can i get the price range for ${project.name}\n\nMy name is`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-nature-900 text-white px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-[0.25em] hover:bg-nature-800 transition-all duration-500 shadow-sm hover:shadow-lg shadow-nature-900/20 active:scale-95 text-center"
@@ -250,7 +250,7 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
                     
                     <div className="pt-4">
                       <a 
-                        href="https://wa.me/601111697251?text=%5BCPD%5D%20Hi%2C%20I%20am%20interested%20in%20Central%20Park%20Damansara.%20Can%20you%20send%20me%20more%20info%3F%0A%0AMy%20name%20is" 
+                        href={`https://wa.me/601111697251?text=${encodeURIComponent(`[CTA] Hi, can i get the price range for ${project.name}\n\nMy name is`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => setIsMenuOpen(false)} 
@@ -332,12 +332,14 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
               <h3 className="font-serif text-2xl sm:text-3xl text-white mb-2 tracking-tight">Ready to see the detailed plans?</h3>
               <p className="text-nature-100/60 font-light text-sm uppercase tracking-[0.2em]">Full pricing & e-brochure available now</p>
             </div>
-            <button 
-              onClick={() => onNavigate(`/#register?project=${project.id}&source=mini-cta-1`)}
+            <a 
+              href={`https://wa.me/601111697251?text=${encodeURIComponent(`[CTA] Hi, can i get the price range for ${project.name}\n\nMy name is`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white text-nature-900 px-10 py-4 rounded-full text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-nature-100 transition-colors shadow-2xl active:scale-95 duration-200 whitespace-nowrap"
             >
-              Request Access
-            </button>
+              Get immediate pricing
+            </a>
           </div>
         </div>
       </section>
@@ -575,14 +577,16 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
           </div>
           <h3 className="font-serif text-3xl md:text-4xl text-nature-900 mb-8 tracking-tight">The last RM5xx K Condo in Petaling Jaya.</h3>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <button 
-              onClick={() => onNavigate(`/#register?project=${project.id}&source=mini-cta-2-prices`)}
-              className="w-full sm:w-auto bg-nature-900 text-white px-12 py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-nature-800 transition-all shadow-xl shadow-nature-900/20 active:scale-95"
+            <a 
+              href={`https://wa.me/601111697251?text=${encodeURIComponent(`[CTA] Hi, can i get the Early Bird Prices for ${project.name}\n\nMy name is`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto bg-nature-900 text-white px-12 py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-nature-800 transition-all shadow-xl shadow-nature-900/20 active:scale-95 text-center"
             >
               Secure Early Bird Prices
-            </button>
+            </a>
             <button 
-              onClick={() => onNavigate(`/#register?project=${project.id}&source=mini-cta-2-availability`)}
+              onClick={() => scrollToSection('register-now')}
               className="w-full sm:w-auto text-nature-900/60 hover:text-nature-900 px-8 py-5 text-[10px] font-bold uppercase tracking-[0.3em] transition-colors"
             >
               Unit Availability
@@ -763,7 +767,7 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
       </AnimatePresence>
 
       {/* CTA Section */}
-      <section className="py-12 lg:py-24 bg-nature-900 text-white text-center px-4">
+      <section id="register-now" className="py-12 lg:py-24 bg-nature-900 text-white text-center px-4">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-serif text-2xl lg:text-5xl mb-3 lg:mb-6 tracking-tight">Interested in {project.name}?</h2>
           <p className="text-nature-100 font-light text-xs lg:text-lg mb-6 lg:mb-10 leading-relaxed">
