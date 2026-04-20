@@ -318,10 +318,10 @@ export default function HomePage({ onNavigate }: HomePageProps) {
       {/* Hero Section */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         {HERO_SLIDES.map((slide, index) => (
-            <div 
-              key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
-            >
+          <div 
+            key={`hero-slide-${index}`}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+          >
               <div className="absolute inset-0 bg-gradient-to-b from-nature-950/90 via-nature-950/70 to-nature-950/90 backdrop-blur-[2px] z-10" />
               <img 
                 src={slide.image} 
@@ -381,7 +381,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         <div className="absolute bottom-10 left-0 right-0 z-30 flex justify-center space-x-3">
           {HERO_SLIDES.map((_, index) => (
             <button 
-              key={index}
+              key={`hero-dot-${index}`}
               onClick={() => setCurrentSlide(index)}
               className={`w-12 h-1 transition-all duration-300 ${index === currentSlide ? 'bg-white' : 'bg-white/40 hover:bg-white/60'}`}
               aria-label={`Go to slide ${index + 1}`}

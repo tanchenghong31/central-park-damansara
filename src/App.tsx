@@ -128,8 +128,8 @@ function App() {
           <HomePage onNavigate={navigate} />
         )}
       </motion.div>
-      <WhatsAppButton />
-      <RegistrationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <WhatsAppButton key="global-whatsapp-button" />
+      <RegistrationModal key="global-registration-modal" isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </AnimatePresence>
   );
 }

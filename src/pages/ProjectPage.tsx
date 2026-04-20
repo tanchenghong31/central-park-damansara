@@ -307,7 +307,7 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
             {project.features.map((feature, index) => {
               const IconComponent = IconMap[feature.icon] || Leaf;
               return (
-                <div key={index} className="flex flex-col items-center text-center p-8 border border-nature-100 hover:border-nature-800 transition-colors duration-300 bg-nature-50/50">
+                <div key={`feature-${index}`} className="flex flex-col items-center text-center p-8 border border-nature-100 hover:border-nature-800 transition-colors duration-300 bg-nature-50/50">
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm border border-nature-100">
                     <IconComponent className="text-nature-800" size={28} strokeWidth={1.5} />
                   </div>
@@ -384,7 +384,7 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
           <div className="flex flex-wrap justify-center gap-2 lg:gap-4 mb-8 lg:mb-10">
             {project.unitLayouts.map((layout, index) => (
               <button
-                key={index}
+                key={`layout-tab-${index}`}
                 onClick={() => setActiveLayout(index)}
                 className={`px-6 lg:px-8 py-2 lg:py-3 text-xs font-medium uppercase tracking-widest transition-all duration-300 border ${
                   activeLayout === index 
@@ -628,7 +628,7 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
             <div className="overflow-hidden relative h-[300px] sm:h-[500px] border border-nature-100">
               {project.facilities.map((fac, index) => (
                 <div 
-                  key={index}
+                  key={`fac-slide-${index}`}
                   className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${index === facSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
                 >
                   <img 
@@ -648,7 +648,7 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
             <div className="flex justify-center space-x-2 mt-6">
               {project.facilities.map((_, index) => (
                 <button 
-                  key={index}
+                  key={`fac-dot-${index}`}
                   onClick={() => setFacSlide(index)}
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${index === facSlide ? 'bg-nature-800 w-6' : 'bg-nature-100 hover:bg-nature-700'}`}
                   aria-label={`Go to facility slide ${index + 1}`}
@@ -671,7 +671,7 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
               
               <div className="space-y-4">
                 {project.amenities.map((amenityGroup, index) => (
-                  <div key={index} className="border border-nature-100 bg-white">
+                  <div key={`amenity-group-${index}`} className="border border-nature-100 bg-white">
                     <button 
                       className="w-full flex justify-between items-center p-6 hover:bg-nature-50 transition-colors"
                       onClick={() => setOpenAccordion(openAccordion === index ? null : index)}
@@ -694,7 +694,7 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
                           <div className="p-6 bg-white border-t border-nature-100">
                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               {amenityGroup.items.map((item, i) => (
-                                <li key={i} className="flex items-start text-gray-500 font-light text-sm">
+                                <li key={`amenity-item-${index}-${i}`} className="flex items-start text-gray-500 font-light text-sm">
                                   <MapPin size={16} className="text-nature-800 mr-3 mt-0.5 flex-shrink-0" />
                                   {item}
                                 </li>
