@@ -12,13 +12,13 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    // Show modal after 8 seconds (luxury timing) if not shown this session
+    // Show modal after 15 seconds if not shown this session
     const shown = sessionStorage.getItem('registration_modal_shown');
     if (!shown) {
       const timer = setTimeout(() => {
         setIsModalOpen(true);
         sessionStorage.setItem('registration_modal_shown', 'true');
-      }, 7000);
+      }, 15000);
       return () => clearTimeout(timer);
     }
   }, []);
