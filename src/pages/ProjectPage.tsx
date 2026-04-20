@@ -773,12 +773,14 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
           <p className="text-nature-100 font-light text-xs lg:text-lg mb-6 lg:mb-10 leading-relaxed">
             Register your interest today to receive the e-brochure, floor plans, and exclusive early bird privileges.
           </p>
-          <button 
-            onClick={() => onNavigate(`/#register?project=${project.id}`)} 
+          <a 
+            href={`https://wa.me/601111697251?text=${encodeURIComponent(`[CTA] Hi, I am interested in ${project.name}. Can I View the Show Gallery?\n\nMy name is`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block border border-white text-white px-8 lg:px-10 py-3 lg:py-4 text-[10px] lg:text-sm font-medium uppercase tracking-[0.2em] hover:bg-white hover:text-nature-900 transition-colors duration-300 mb-8"
           >
             Register Now
-          </button>
+          </a>
           <div className="flex justify-center">
             <div className="flex items-center space-x-4">
               <div className="w-px h-10 bg-[#C5A059]/30"></div>
