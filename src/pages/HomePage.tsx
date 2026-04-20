@@ -139,7 +139,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
   }, [lastScrollY]);
 
   useEffect(() => {
-    document.title = "Central Park Damansara | Pet-Friendly Condo in PJ 2026 New Launches";
+    document.title = "Central Park Damansara | Pet-Friendly Luxury Residences in PJ";
   }, []);
 
   const handleRegisterSubmit = async (e: React.FormEvent) => {

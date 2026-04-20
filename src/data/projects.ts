@@ -2,8 +2,8 @@ export const PROJECTS = [
   {
     id: "the-aldenz",
     name: "The Aldenz",
-    seoTitle: "The Aldenz | Pet-Friendly Condo in PJ 2026 New | Luxury Residences",
-    description: "Elevated prestige. Exclusive low-density living with panoramic views and pet-friendly spaces.",
+    seoTitle: "The Aldenz | Pet-Friendly Luxury Residences at Central Park Damansara",
+    description: "Discover The Aldenz: PJ's premier pet-friendly luxury residences. Exclusive low-density living with panoramic views next to a 65-acre central park.",
     image: "https://lh3.googleusercontent.com/d/11WkGxXCBGpsGxOte9ED-yXQhZjl8Aerd",
     heroImage: "https://lh3.googleusercontent.com/d/11WkGxXCBGpsGxOte9ED-yXQhZjl8Aerd",
     features: [

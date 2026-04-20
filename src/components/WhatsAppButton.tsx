@@ -39,11 +39,19 @@ export default function WhatsAppButton() {
               </button>
               
               <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 rounded-full bg-nature-100 flex items-center justify-center flex-shrink-0">
-                  <MessageCircle size={16} className="text-nature-800" />
+                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0 border border-nature-100 overflow-hidden">
+                  <img 
+                    src="https://lh3.googleusercontent.com/d/1UgGrMkJnkvl-qqaG3Sb8YZsjEdUIRxmB" 
+                    alt="Logo" 
+                    className="w-8 h-auto object-contain"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <div>
-                  <p className="text-[11px] font-bold text-nature-800 uppercase tracking-wider mb-1">Admin</p>
+                  <div className="flex items-center space-x-1.5 mb-1">
+                    <p className="text-[11px] font-bold text-nature-800 uppercase tracking-wider">Admin</p>
+                    <div className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse"></div>
+                  </div>
                   <p className="text-sm text-gray-600 font-light leading-relaxed">
                     Hi! Do you need assistance on <span className="font-semibold text-nature-900">layouts</span> and <span className="font-semibold text-nature-900">unit availability</span>?
                   </p>
