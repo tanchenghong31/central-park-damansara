@@ -447,12 +447,15 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
                   </div>
                 </div>
 
-                <button 
-                  onClick={() => onNavigate(`/#register?project=${project.id}&type=${project.unitLayouts[activeLayout].name}`)}
-                  className="w-full bg-nature-900 text-white py-3.5 text-xs font-medium uppercase tracking-[0.2em] hover:bg-nature-800 transition-colors duration-300 shadow-lg shadow-nature-900/10 mt-auto"
+                <a 
+                  href={`https://wa.me/601111697251?text=${encodeURIComponent(`[CTA] Hi, May i get the pricing for ${project.unitLayouts[activeLayout].name.split('(')[0].trim()}\n\nMy name is`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-nature-900 text-white py-3.5 text-xs font-medium uppercase tracking-[0.2em] hover:bg-nature-800 transition-colors duration-300 shadow-lg shadow-nature-900/10 mt-auto text-center"
                 >
                   Get Pricing & E-Brochure
-                </button>
+                </a>
+                <p className="text-[9px] text-nature-400 mt-2 text-center uppercase tracking-widest font-bold">Fast Response via WhatsApp</p>
               </div>
 
               {/* Right Image */}
