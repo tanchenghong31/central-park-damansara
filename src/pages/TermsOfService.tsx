@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Menu, X, ArrowLeft } from 'lucide-react';
+import { ChevronDown, Menu, X, ArrowLeft, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-interface PrivacyPolicyProps {
+interface TermsOfServiceProps {
   onNavigate: (path: string) => void;
 }
 
-export default function PrivacyPolicy({ onNavigate }: PrivacyPolicyProps) {
+export default function TermsOfService({ onNavigate }: TermsOfServiceProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -176,77 +176,81 @@ export default function PrivacyPolicy({ onNavigate }: PrivacyPolicyProps) {
           </button>
 
           <header className="mb-16">
-            <span className="text-nature-800 text-xs font-semibold uppercase tracking-[0.4em] mb-4 block">Privacy Policy</span>
+            <span className="text-nature-800 text-xs font-semibold uppercase tracking-[0.4em] mb-4 block">Central Park Damansara</span>
             <h1 className="font-serif text-4xl md:text-5xl text-nature-900 tracking-tight leading-tight">
-              Our Commitment to <br />
-              <span className="italic font-light text-nature-800/50">Your Privacy</span>
+              Terms of <br />
+              <span className="italic font-light text-nature-800/50">Service</span>
             </h1>
           </header>
 
           <div className="prose prose-nature max-w-none space-y-12">
             <section>
-              <h2 className="text-2xl font-serif text-nature-900 border-b border-nature-100 pb-4 mb-6">Introduction</h2>
+              <h2 className="text-2xl font-serif text-nature-900 border-b border-nature-100 pb-4 mb-6">1. Acceptance of Terms</h2>
               <p className="text-gray-600 font-light leading-relaxed">
-                Welcome to Central Park Damansara (centralpark-damansara.com). We value your privacy and are committed to protecting your personal data. This Privacy Policy outlines how we collect, use, and safeguard your information when you visit our website or interact with our services.
+                By accessing and using centralpark-damansara.com (the "Website"), you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-serif text-nature-900 border-b border-nature-100 pb-4 mb-6">Information We Collect</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-white p-8 rounded-2xl border border-nature-100 shadow-sm">
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-nature-800 mb-4">Direct Information</h3>
-                  <p className="text-sm text-gray-500 font-light leading-relaxed">
-                    This includes name, email address, and phone number provided when you register interest for our residential projects.
-                  </p>
-                </div>
-                <div className="bg-white p-8 rounded-2xl border border-nature-100 shadow-sm">
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-nature-800 mb-4">Usage Data</h3>
-                  <p className="text-sm text-gray-500 font-light leading-relaxed">
-                    Information about how you browse our site, including IP address, browser type, and pages visited to improve user experience.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-serif text-nature-900 border-b border-nature-100 pb-4 mb-6">How We Use Your Information</h2>
-              <ul className="space-y-4 text-gray-600 font-light list-disc pl-5">
-                <li>To provide you with information regarding Central Park Damansara and our new launches.</li>
-                <li>To coordinate project viewings and sales consultations.</li>
-                <li>To improve our website functionality and marketing efforts.</li>
-                <li>To comply with legal obligations and protect our rights.</li>
+              <h2 className="text-2xl font-serif text-nature-900 border-b border-nature-100 pb-4 mb-6">2. Use License</h2>
+              <p className="text-gray-600 font-light leading-relaxed">
+                Permission is granted to temporarily view the materials (information or software) on the Website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+              </p>
+              <ul className="mt-4 space-y-2 text-gray-600 font-light list-disc pl-5">
+                <li>Modify or copy the materials.</li>
+                <li>Use the materials for any commercial purpose or for any public display.</li>
+                <li>Attempt to decompile or reverse engineer any software contained on the Website.</li>
+                <li>Remove any copyright or other proprietary notations from the materials.</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-2xl font-serif text-nature-900 border-b border-nature-100 pb-4 mb-6">Data Security</h2>
+              <h2 className="text-2xl font-serif text-nature-900 border-b border-nature-100 pb-4 mb-6">3. Disclaimer</h2>
               <p className="text-gray-600 font-light leading-relaxed">
-                We implement a variety of security measures to maintain the safety of your personal information. Your personal data is contained behind secured networks and is only accessible by a limited number of persons who have special access rights to such systems.
+                The materials on the Website are provided on an 'as is' basis. Central Park Damansara makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-serif text-nature-900 border-b border-nature-100 pb-4 mb-6">Cookies</h2>
+              <h2 className="text-2xl font-serif text-nature-900 border-b border-nature-100 pb-4 mb-6">4. Limitations</h2>
               <p className="text-gray-600 font-light leading-relaxed">
-                We use cookies to help us remember and process your preferences for future visits and compile aggregate data about site traffic and site interaction so that we can offer better site experiences and tools in the future.
+                In no event shall Central Park Damansara or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on the Website.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-serif text-nature-900 border-b border-nature-100 pb-4 mb-6">5. User Registration</h2>
+              <p className="text-gray-600 font-light leading-relaxed">
+                When you submit a registration form on our Website, you agree to provide accurate, current, and complete information. You understand that the information provided will be used by our property consultants to contact you regarding our residential projects.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-serif text-nature-900 border-b border-nature-100 pb-4 mb-6">6. Governing Law</h2>
+              <p className="text-gray-600 font-light leading-relaxed">
+                These terms and conditions are governed by and construed in accordance with the laws of Malaysia and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-serif text-nature-900 border-b border-nature-100 pb-4 mb-6">Contact Us</h2>
               <p className="text-gray-600 font-light leading-relaxed">
-                If there are any questions regarding this privacy policy, you may contact us using the information below:
+                If you have any questions about these Terms of Service, please contact us:
               </p>
               <div className="mt-8 p-8 bg-nature-900 text-white rounded-3xl inline-block">
-                <p className="text-sm font-light mb-2 opacity-70 uppercase tracking-widest">Contact Us</p>
-                <a href="tel:+601111697251" className="text-xl md:text-2xl font-serif italic mb-6 block hover:text-nature-100 transition-colors">+6011 1169 7251</a>
-                <p className="text-sm font-light mb-2 opacity-70 uppercase tracking-widest">Sales Gallery</p>
-                <p className="text-sm leading-relaxed max-w-xs font-light">
-                  Central Park Damansara Sales Gallery, <br />
-                  Damansara Perdana, 47820 Petaling Jaya, <br />
-                  Selangor, Malaysia.
-                </p>
+                <p className="text-sm font-light mb-2 opacity-70 uppercase tracking-widest">Call Our Sales Team</p>
+                <div className="flex items-center group">
+                  <Phone className="mr-3 text-nature-100 group-hover:text-white transition-colors" size={20} strokeWidth={1.5} />
+                  <a href="tel:+601111697251" className="text-xl md:text-2xl font-serif italic block hover:text-nature-100 transition-colors tracking-tight">+6011 1169 7251</a>
+                </div>
+                <div className="mt-8">
+                  <p className="text-sm font-light mb-2 opacity-70 uppercase tracking-widest">Sales Gallery</p>
+                  <p className="text-sm leading-relaxed max-w-xs font-light">
+                    Central Park Damansara Sales Gallery, <br />
+                    Damansara Perdana, 47820 Petaling Jaya, <br />
+                    Selangor, Malaysia.
+                  </p>
+                </div>
               </div>
             </section>
           </div>
@@ -290,13 +294,13 @@ export default function PrivacyPolicy({ onNavigate }: PrivacyPolicyProps) {
               &copy; {new Date().getFullYear()} Central Park Damansara. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <button disabled className="text-white cursor-default font-medium text-xs border-b border-white">Privacy Policy</button>
               <button 
-                onClick={() => onNavigate('/terms-of-service')}
+                onClick={() => onNavigate('/privacy-policy')}
                 className="text-nature-100 hover:text-white transition-colors font-light text-xs"
               >
-                Terms of Service
+                Privacy Policy
               </button>
+              <button disabled className="text-white cursor-default font-medium text-xs border-b border-white">Terms of Service</button>
             </div>
           </div>
         </div>

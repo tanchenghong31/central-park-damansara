@@ -4,7 +4,7 @@ import {
   TreePine, Shield, Smartphone, Leaf, 
   Building2, Laptop, Sun, Trash2, 
   Crown, Key, Diamond, BellRing, PawPrint, Coffee,
-  ChevronLeft, ChevronRight, Menu, X, Phone, Mail, Maximize
+  ChevronLeft, ChevronRight, Menu, X, Phone, Maximize
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PROJECTS } from '../data/projects';
@@ -264,8 +264,9 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
                   <div className="mt-auto flex justify-between items-center text-[9px] text-nature-400 uppercase tracking-[0.3em] pt-6 border-t border-nature-100 font-medium">
                     <span>Petaling Jaya, Selangor</span>
                     <div className="flex space-x-4">
-                      <Phone size={14} />
-                      <Mail size={14} />
+                      <a href="tel:+601111697251" className="hover:text-nature-900 transition-colors">
+                        <Phone size={14} />
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -827,7 +828,12 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
               >
                 Privacy Policy
               </button>
-              <a href="#" className="text-nature-100 hover:text-white transition-colors font-light text-xs">Terms of Service</a>
+              <button 
+                onClick={() => onNavigate('/terms-of-service')}
+                className="text-nature-100 hover:text-white transition-colors font-light text-xs"
+              >
+                Terms of Service
+              </button>
             </div>
           </div>
         </div>

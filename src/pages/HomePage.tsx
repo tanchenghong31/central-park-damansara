@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, MapPin, Phone, Mail, ArrowRight, Leaf, Shield, Map, ChevronDown, Maximize, Globe, PenTool, Users, PawPrint, Coffee } from 'lucide-react';
+import { Menu, X, MapPin, Phone, ArrowRight, Leaf, Shield, Map, ChevronDown, Maximize, Globe, PenTool, Users, PawPrint, Coffee } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 const HERO_SLIDES = [
@@ -111,6 +111,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -141,9 +142,34 @@ export default function HomePage({ onNavigate }: HomePageProps) {
     document.title = "Central Park Damansara | Pet-Friendly Condo in PJ 2026 New Launches";
   }, []);
 
-  const handleRegisterSubmit = (e: React.FormEvent) => {
+  const handleRegisterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you for your interest. Our property consultant will contact you shortly.");
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('https://formspree.io/f/mqewlyln', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        alert("Thank you for your interest. Our property consultant will contact you shortly.");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        alert("Oops! There was a problem submitting your form. Please try again later.");
+      }
+    } catch (error) {
+      alert("Oops! There was a problem submitting your form. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -277,8 +303,9 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                   <div className="pt-8 border-t border-nature-100 flex justify-between items-center text-[9px] text-nature-400 uppercase tracking-[0.3em] font-medium">
                     <span>Central Park Damansara</span>
                     <div className="flex space-x-4">
-                      <Phone size={14} />
-                      <Mail size={14} />
+                      <a href="tel:+601111697251" className="hover:text-nature-900 transition-colors">
+                        <Phone size={14} />
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -914,69 +941,105 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               
               <div className="space-y-4 lg:space-y-8">
                 <div className="flex items-center">
-                  <Phone className="text-nature-100 mr-4 lg:mr-6" size={20} strokeWidth={1.5} />
-                  <div>
-                    <p className="text-[10px] lg:text-sm text-nature-100 uppercase tracking-widest mb-0.5 lg:mb-1">Call Us</p>
-                    <p className="text-base lg:text-lg font-light">+60 3 1234 5678</p>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <Mail className="text-nature-100 mr-4 lg:mr-6" size={20} strokeWidth={1.5} />
-                  <div>
-                    <p className="text-[10px] lg:text-sm text-nature-100 uppercase tracking-widest mb-0.5 lg:mb-1">Email</p>
-                    <p className="text-base lg:text-lg font-light">sales@centralparkdamansara.com</p>
-                  </div>
+                  <a href="tel:+601111697251" className="flex items-center group">
+                    <Phone className="text-nature-100 mr-4 lg:mr-6 group-hover:text-white transition-colors" size={20} strokeWidth={1.5} />
+                    <div>
+                      <p className="text-[10px] lg:text-sm text-nature-100 uppercase tracking-widest mb-0.5 lg:mb-1">Call Us</p>
+                      <p className="text-base lg:text-lg font-light group-hover:text-white transition-colors">+6011 1169 7251</p>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white p-6 lg:p-12">
-              <form onSubmit={handleRegisterSubmit} className="space-y-4 lg:space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-[10px] lg:text-xs font-medium text-nature-900 uppercase tracking-widest mb-1 lg:mb-2">Full Name</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    required
-                    className="w-full border-b border-nature-100 bg-transparent py-2 lg:py-3 text-urban-900 focus:outline-none focus:border-nature-800 transition-colors placeholder-gray-300 font-light text-sm"
-                    placeholder="Name"
-                  />
+            <div className="bg-white p-6 lg:p-10">
+              <form onSubmit={handleRegisterSubmit} className="space-y-4 lg:space-y-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-[10px] lg:text-[11px] font-medium text-nature-900 uppercase tracking-widest mb-1">Full Name</label>
+                    <input 
+                      type="text" 
+                      id="name" 
+                      name="name"
+                      required
+                      className="w-full border-b border-nature-100 bg-transparent py-2 text-urban-900 focus:outline-none focus:border-nature-800 transition-colors placeholder-gray-300 font-light text-sm"
+                      placeholder="Name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-[10px] lg:text-[11px] font-medium text-nature-900 uppercase tracking-widest mb-1">Phone Number</label>
+                    <input 
+                      type="tel" 
+                      id="phone" 
+                      name="phone"
+                      required
+                      className="w-full border-b border-nature-100 bg-transparent py-2 text-urban-900 focus:outline-none focus:border-nature-800 transition-colors placeholder-gray-300 font-light text-sm"
+                      placeholder="+6012 345 6789"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <label htmlFor="phone" className="block text-[10px] lg:text-xs font-medium text-nature-900 uppercase tracking-widest mb-1 lg:mb-2">Phone Number</label>
-                  <input 
-                    type="tel" 
-                    id="phone" 
-                    required
-                    className="w-full border-b border-nature-100 bg-transparent py-2 lg:py-3 text-urban-900 focus:outline-none focus:border-nature-800 transition-colors placeholder-gray-300 font-light text-sm"
-                    placeholder="+60 12 345 6789"
-                  />
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+                  <div>
+                    <label htmlFor="email" className="block text-[10px] lg:text-[11px] font-medium text-nature-900 uppercase tracking-widest mb-1">Email Address</label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      name="email"
+                      required
+                      className="w-full border-b border-nature-100 bg-transparent py-2 text-urban-900 focus:outline-none focus:border-nature-800 transition-colors placeholder-gray-300 font-light text-sm"
+                      placeholder="name@example.com"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="project" className="block text-[10px] lg:text-[11px] font-medium text-nature-900 uppercase tracking-widest mb-1">Project of Interest</label>
+                    <select 
+                      id="project" 
+                      name="project"
+                      required
+                      className="w-full border-b border-nature-100 bg-transparent py-2 text-urban-900 focus:outline-none focus:border-nature-800 transition-colors font-light appearance-none text-sm"
+                    >
+                      <option value="the-aldenz">The Aldenz (New Launch)</option>
+                      <option value="future">Upcoming Future Launches</option>
+                    </select>
+                  </div>
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-[10px] lg:text-xs font-medium text-nature-900 uppercase tracking-widest mb-1 lg:mb-2">Email Address</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    required
-                    className="w-full border-b border-nature-100 bg-transparent py-2 lg:py-3 text-urban-900 focus:outline-none focus:border-nature-800 transition-colors placeholder-gray-300 font-light text-sm"
-                    placeholder="name@example.com"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="project" className="block text-[10px] lg:text-xs font-medium text-nature-900 uppercase tracking-widest mb-1 lg:mb-2">Project of Interest</label>
-                  <select 
-                    id="project" 
-                    className="w-full border-b border-nature-100 bg-transparent py-2 lg:py-3 text-urban-900 focus:outline-none focus:border-nature-800 transition-colors font-light appearance-none text-sm"
-                  >
-                    <option value="the-aldenz">The Aldenz (New Launch)</option>
-                    <option value="future">Upcoming Future Launches</option>
-                  </select>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+                  <div>
+                    <label htmlFor="bedrooms" className="block text-[10px] lg:text-[11px] font-medium text-nature-900 uppercase tracking-widest mb-1">Number of Bedrooms</label>
+                    <select 
+                      id="bedrooms" 
+                      name="bedrooms"
+                      required
+                      className="w-full border-b border-nature-100 bg-transparent py-2 text-urban-900 focus:outline-none focus:border-nature-800 transition-colors font-light appearance-none text-sm"
+                    >
+                      <option value="">Select Option</option>
+                      <option value="2">2 Bedrooms</option>
+                      <option value="3">3 Bedrooms</option>
+                      <option value="4+">4+ Bedrooms</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="purpose" className="block text-[10px] lg:text-[11px] font-medium text-nature-900 uppercase tracking-widest mb-1">Purpose of Purchase</label>
+                    <select 
+                      id="purpose" 
+                      name="purpose"
+                      required
+                      className="w-full border-b border-nature-100 bg-transparent py-2 text-urban-900 focus:outline-none focus:border-nature-800 transition-colors font-light appearance-none text-sm"
+                    >
+                      <option value="">Select Option</option>
+                      <option value="own-stay">Own Stay</option>
+                      <option value="investment">Investment</option>
+                    </select>
+                  </div>
                 </div>
                 <button 
                   type="submit" 
-                  className="w-full border border-nature-800 bg-nature-800 text-white py-3 lg:py-4 text-xs lg:text-sm font-medium uppercase tracking-[0.2em] hover:bg-white hover:text-nature-900 transition-colors duration-300 mt-2 lg:mt-4"
+                  disabled={isSubmitting}
+                  className="w-full border border-nature-800 bg-nature-800 text-white py-3 lg:py-3.5 text-xs lg:text-sm font-medium uppercase tracking-[0.2em] hover:bg-white hover:text-nature-900 transition-colors duration-300 mt-2 lg:mt-3 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Submit Registration
+                  {isSubmitting ? 'Submitting...' : 'Submit Registration'}
                 </button>
               </form>
             </div>
@@ -1027,7 +1090,12 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               >
                 Privacy Policy
               </button>
-              <a href="#" className="text-nature-100 hover:text-white transition-colors font-light text-xs">Terms of Service</a>
+              <button 
+                onClick={() => onNavigate('/terms-of-service')}
+                className="text-nature-100 hover:text-white transition-colors font-light text-xs"
+              >
+                Terms of Service
+              </button>
             </div>
           </div>
         </div>

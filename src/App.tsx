@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import HomePage from './pages/HomePage';
 import ProjectPage from './pages/ProjectPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
     
     if (firstPart.startsWith('/project/')) return '/project';
     if (firstPart === '/privacy-policy') return '/privacy-policy';
+    if (firstPart === '/terms-of-service') return '/terms-of-service';
     return '/';
   };
 
@@ -101,6 +103,8 @@ function App() {
       >
         {pageBase === '/privacy-policy' ? (
           <PrivacyPolicy onNavigate={navigate} />
+        ) : pageBase === '/terms-of-service' ? (
+          <TermsOfService onNavigate={navigate} />
         ) : pageBase === '/project' ? (
           <ProjectPage 
             projectId={animationKey.replace('/project/', '')} 
