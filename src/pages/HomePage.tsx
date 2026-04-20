@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, MapPin, Phone, ArrowRight, Leaf, Shield, Map, ChevronDown, Maximize, Globe, PenTool, Users, PawPrint, Coffee } from 'lucide-react';
+import { Menu, X, MapPin, Phone, ArrowRight, Leaf, Shield, Map, ChevronDown, Maximize, Globe, PenTool, Users, PawPrint, Coffee, Crown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 const HERO_SLIDES = [
@@ -208,7 +208,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               </div>
 
               <a 
-                href="https://wa.me/601111697251?text=%5BCPD%5D%20Hi%2C%20I%20am%20interested%20in%20Central%20Park%20Damansara.%20Can%20you%20send%20me%20more%20info%3F%0A%0AMy%20name%20is" 
+                href="https://wa.me/601111697251?text=%5BCPD%5D%20Hi%2C%20I%20am%20interested%20in%20Central%20Park%20Damansara.%20Send%20me%20Upcoming%20project%20details.%0A%0AMy%20name%20is" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-nature-900 text-white px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-nature-800 transition-all duration-500 shadow-sm hover:shadow-lg shadow-nature-900/20 active:scale-95"
@@ -290,7 +290,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                   
                   <div className="pt-4">
                     <a 
-                      href="https://wa.me/601111697251?text=%5BCPD%5D%20Hi%2C%20I%20am%20interested%20in%20Central%20Park%20Damansara.%20Can%20you%20send%20me%20more%20info%3F%0A%0AMy%20name%20is" 
+                      href="https://wa.me/601111697251?text=%5BCPD%5D%20Hi%2C%20I%20am%20interested%20in%20Central%20Park%20Damansara.%20Send%20me%20Upcoming%20project%20details.%0A%0AMy%20name%20is" 
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setIsMenuOpen(false)} 
@@ -390,77 +390,6 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
-      {/* Why Central Park Damansara */}
-      <section id="lifestyle" className="py-24 bg-[#F9F7F2]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-nature-800 text-xs font-semibold uppercase tracking-[0.4em] mb-4 block">The Masterplan</span>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-nature-900 mb-8 tracking-tight leading-tight">A New Standard of Living</h2>
-            <div className="w-20 h-px bg-nature-800 mx-auto mb-8"></div>
-            <p className="text-gray-600 font-light leading-relaxed text-lg">
-              Discover a meticulously planned township that seamlessly blends the vibrancy of urban life with the tranquility of nature.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-nature-200/60">
-            <div className="group pt-12 md:pt-16 md:px-8 border-b md:border-b-0 md:border-r border-nature-200/60 pb-12 md:pb-0">
-              <div className="aspect-[4/5] overflow-hidden mb-8 relative">
-                <div className="absolute inset-0 border border-white/20 z-10 m-4"></div>
-                <img 
-                  src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=800&q=80" 
-                  alt="Waterfall Park" 
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="text-left">
-                <span className="text-[10px] text-nature-800 uppercase tracking-[0.3em] mb-3 block font-semibold">Nature</span>
-                <h3 className="text-2xl font-serif text-nature-900 mb-4">10-Acre Waterfall Park</h3>
-                <p className="text-gray-500 font-light text-sm leading-relaxed">Your daily retreat. A sprawling green oasis featuring a cascading waterfall right at your doorstep.</p>
-              </div>
-            </div>
-            <div className="group pt-12 md:pt-16 md:px-8 border-b md:border-b-0 md:border-r border-nature-200/60 pb-12 md:pb-0">
-              <div 
-                className="aspect-[4/5] overflow-hidden mb-8 relative cursor-zoom-in group/zoom"
-                onClick={() => setSelectedImage("https://lh3.googleusercontent.com/d/1ZlYan8s3GdaPDNu1XcQGfen2evYrsvi6")}
-              >
-                <div className="absolute inset-0 border border-white/20 z-10 m-4"></div>
-                <div className="absolute top-6 right-6 z-20 bg-white/90 backdrop-blur-md p-2 rounded-full opacity-0 group-hover/zoom:opacity-100 transition-all duration-300 transform translate-y-2 group-hover/zoom:translate-y-0 shadow-lg">
-                  <Maximize size={16} className="text-nature-900" />
-                </div>
-                <img 
-                  src="https://lh3.googleusercontent.com/d/1ZlYan8s3GdaPDNu1XcQGfen2evYrsvi6" 
-                  alt="Prime Connectivity Map | Central Park Damansara Accessibility Petaling Jaya" 
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="text-left">
-                <span className="text-[10px] text-nature-800 uppercase tracking-[0.3em] mb-3 block font-semibold">Location</span>
-                <h3 className="text-2xl font-serif text-nature-900 mb-4">Prime Connectivity</h3>
-                <p className="text-gray-500 font-light text-sm leading-relaxed">Seamlessly connected to LDP, Penchala Link, and DASH highways. Minutes away from 1 Utama and IKEA.</p>
-              </div>
-            </div>
-            <div className="group pt-12 md:pt-16 md:px-8 pb-12 md:pb-0">
-              <div className="aspect-[4/5] overflow-hidden mb-8 relative">
-                <div className="absolute inset-0 border border-white/20 z-10 m-4"></div>
-                <img 
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" 
-                  alt="Integrated Township" 
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="text-left">
-                <span className="text-[10px] text-nature-800 uppercase tracking-[0.3em] mb-3 block font-semibold">Community</span>
-                <h3 className="text-2xl font-serif text-nature-900 mb-4">Integrated Township</h3>
-                <p className="text-gray-500 font-light text-sm leading-relaxed">A self-sustaining ecosystem of residential, commercial, and retail spaces designed for absolute convenience.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Key Highlights Section */}
       <section id="features" className="py-20 bg-white border-y border-nature-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -497,165 +426,96 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
-      {/* Project Status & Future Projects CTA */}
-      <section id="collection" className="py-24 bg-nature-900 text-white overflow-hidden relative">
-        {/* Background Decorative Element */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-nature-800/20 skew-x-12 translate-x-1/2"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="text-nature-100 text-xs font-semibold uppercase tracking-[0.4em] mb-6 block">The Residences</span>
-              <h2 className="font-serif text-4xl md:text-5xl mb-8 tracking-tight leading-tight">The Collection</h2>
-              <p className="text-nature-100/80 font-light mb-10 leading-relaxed text-lg max-w-xl">
-                Central Park Damansara is a rapidly evolving 65-acre masterplan. While many phases have found their owners, new opportunities await those seeking a refined urban lifestyle.
-              </p>
-              
-              <div className="space-y-10">
-                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 lg:p-10 rounded-sm shadow-inner">
-                  <div className="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
-                    <h4 className="text-xs font-semibold uppercase tracking-[0.3em] text-nature-100">Current Availability</h4>
-                    <span className="flex h-2 w-2 relative">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-nature-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-nature-500"></span>
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-1 gap-x-12">
-                    <button 
-                      onClick={() => onNavigate('/project/the-aldenz')}
-                      className="flex justify-between items-center group border-b border-white/5 pb-2 hover:border-white/30 transition-all duration-300"
-                    >
-                      <span className="text-base font-medium tracking-wide group-hover:translate-x-1 transition-transform">The Aldenz</span>
-                      <span className="text-[10px] px-4 py-1.5 bg-white text-nature-900 rounded-full uppercase font-black tracking-widest shadow-lg group-hover:scale-105 transition-transform animate-pulse">New Launch</span>
-                    </button>
-                  </div>
-                </div>
+      {/* Township Comparison Section */}
+      <section className="py-24 lg:py-32 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 lg:mb-24 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="text-[#C5A059] text-[10px] lg:text-xs font-semibold uppercase tracking-[0.4em] mb-4 lg:mb-6 block">The Masterplan</span>
+            <h2 className="font-serif text-4xl md:text-6xl lg:text-8xl text-nature-900 tracking-tighter leading-[0.9] mb-8">
+              The <span className="italic font-light text-nature-800/60">Desa Park City</span> <br className="hidden md:block" /> 
+              of Damansara
+            </h2>
+          </motion.div>
+        </div>
 
-                <div>
-                  <h4 className="text-[10px] font-semibold uppercase tracking-[0.4em] text-nature-100/40 mb-6 flex items-center">
-                    <span className="w-8 h-px bg-white/10 mr-4"></span>
-                    Fully Sold Out Phases
-                  </h4>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    {['D’Terra', 'D’Tessera', 'D’Quince', 'D’Vervain', 'D’Cosmos', 'D’Vine', 'D’Erica', 'D’Clover'].map((sold) => (
-                      <div key={sold} className="relative group overflow-hidden">
-                        <div className="px-4 py-3 bg-white/5 border border-white/10 text-[10px] uppercase tracking-[0.2em] text-nature-100/60 transition-all duration-300 group-hover:bg-white/10 flex flex-col gap-1">
-                          <span className="font-medium text-nature-100/80">{sold}</span>
-                          <span className="text-[9px] text-red-400/80 font-bold flex items-center">
-                            <span className="w-1 h-1 bg-red-500 rounded-full mr-1.5"></span>
-                            Sold Out
-                          </span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full relative overflow-hidden shadow-2xl mb-16 lg:mb-24"
+        >
+          <img 
+            src="https://lh3.googleusercontent.com/d/1lcmwDT6Y0GtW0ReJ9MhuK_AIBdKLKp9N" 
+            alt="Aerial View of Central Park Damansara Township with Skyscrapers and Greenery" 
+            className="w-full h-auto block"
+            referrerPolicy="no-referrer"
+          />
+        </motion.div>
 
-            <div className="bg-white p-10 lg:p-16 text-nature-900 shadow-2xl relative">
-              <div className="absolute top-0 left-0 w-2 h-full bg-nature-800"></div>
-              <h3 className="font-serif text-3xl mb-6 tracking-tight">Register for Priority Access</h3>
-              <p className="text-gray-500 font-light mb-8 leading-relaxed">
-                Be the first to receive exclusive updates, floor plans, and early bird privileges for our highly anticipated future residential launches and remaining units.
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl mx-auto text-center mb-16 lg:mb-24 px-4"
+          >
+            <p className="text-gray-600 font-light text-lg lg:text-2xl leading-relaxed italic border-x border-[#C5A059]/30 px-6 lg:px-12">
+              "Experience a visionary 65-acre integrated township designed for those who seek the perfect balance between nature and urbanity."
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 items-start border-t border-nature-100 pt-16 lg:pt-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-center md:text-left"
+            >
+              <span className="text-[#C5A059] text-[10px] uppercase tracking-[0.4em] font-semibold mb-4 block">The Vision</span>
+              <h3 className="font-serif text-2xl text-nature-900 mb-4">Integrated Community</h3>
+              <p className="text-gray-500 font-light text-sm lg:text-base leading-relaxed">
+                Just as Desa Park City redefined community living, Central Park Damansara brings that same world-class standard to the heart of PJ.
               </p>
-              <a href="#register" onClick={() => {
-                setTimeout(() => {
-                  const select = document.getElementById('project') as HTMLSelectElement;
-                  if (select) select.value = 'future';
-                }, 100);
-              }} className="inline-block w-full text-center bg-nature-900 text-white px-8 py-4 text-sm font-medium uppercase tracking-[0.2em] hover:bg-nature-800 transition-colors duration-300">
-                Secure Your Priority Spot
-              </a>
-              <p className="text-[10px] text-gray-400 mt-6 text-center italic uppercase tracking-widest">Limited slots available for upcoming phases</p>
-            </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-center md:text-left"
+            >
+              <span className="text-[#C5A059] text-[10px] uppercase tracking-[0.4em] font-semibold mb-4 block">The scale</span>
+              <h3 className="font-serif text-2xl text-nature-900 mb-4">65-Acre Masterplan</h3>
+              <p className="text-gray-500 font-light text-sm lg:text-base leading-relaxed">
+                A meticulously planned ecosystem where residential, commercial, and retail spaces coexist in perfect harmony.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-center md:text-left"
+            >
+              <span className="text-[#C5A059] text-[10px] uppercase tracking-[0.4em] font-semibold mb-4 block">The soul</span>
+              <h3 className="font-serif text-2xl text-nature-900 mb-4">Pet-Friendly Sanctuary</h3>
+              <p className="text-gray-500 font-light text-sm lg:text-base leading-relaxed">
+                Abundant parks and open spaces designed for your entire family, including your furry companions.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="py-24 bg-nature-50 border-y border-nature-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-nature-800 text-xs font-semibold uppercase tracking-[0.3em] mb-4 block">Project Status</span>
-            <h2 className="font-serif text-4xl md:text-5xl text-nature-900 mb-6 tracking-tight">The Vision <br/><span className="italic font-light text-nature-800/60">Continues</span></h2>
-            <p className="text-gray-500 font-light leading-relaxed">
-              Explore our diverse portfolio of premium residences, each thoughtfully designed to cater to different lifestyle needs.
-            </p>
-          </div>
-
-          <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl w-full">
-              {PROJECTS.map((project) => (
-                <div key={project.id} className="group bg-white border border-nature-100 overflow-hidden hover:border-nature-800 transition-all duration-500 flex flex-col">
-                  <div 
-                    className="relative h-72 overflow-hidden cursor-pointer"
-                    onClick={() => onNavigate(`/project/${project.id}`)}
-                  >
-                    <div className="absolute inset-0 bg-nature-900/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                    <img 
-                      src={project.image} 
-                      alt={(project as any).alt || project.name} 
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute top-4 right-4 z-20">
-                      <span className="text-[10px] px-3 py-1 bg-nature-900 text-white font-bold uppercase tracking-widest rounded-full">Active Launch</span>
-                    </div>
-                  </div>
-                  <div className="p-8 flex flex-col flex-grow">
-                    <h3 className="text-2xl font-serif text-nature-900 mb-2">{project.name}</h3>
-                    <p className="text-nature-800 font-medium text-sm mb-4 tracking-wide">{project.specs}</p>
-                    <p className="text-gray-500 font-light text-sm mb-8 leading-relaxed line-clamp-3">{project.desc}</p>
-                    <div className="mt-auto">
-                      <button 
-                        onClick={() => onNavigate(`/project/${project.id}`)}
-                        className="inline-flex items-center text-sm font-medium text-nature-900 uppercase tracking-widest group-hover:text-nature-700 transition-colors"
-                      >
-                        Discover {project.name} <ArrowRight size={16} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-
-              {/* Future Projects Card */}
-              <div className="group bg-nature-50 border border-nature-100 overflow-hidden hover:border-nature-800 transition-all duration-500 relative flex flex-col">
-                <div className="relative h-72 overflow-hidden bg-nature-200">
-                  <div className="absolute inset-0 bg-nature-900/40 z-10" />
-                  <img 
-                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" 
-                    alt="Future Development" 
-                    className="w-full h-full object-cover grayscale opacity-60 transform group-hover:scale-110 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 z-20 flex items-center justify-center">
-                    <div className="text-center px-6">
-                      <span className="text-white/60 text-[10px] uppercase tracking-[0.4em] mb-2 block">Coming Soon</span>
-                      <h4 className="text-white text-3xl font-serif">Future <br/>Phases</h4>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-8 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-serif text-nature-900 mb-2 italic opacity-60">Upcoming Residences</h3>
-                  <p className="text-nature-800 font-medium text-sm mb-4 tracking-wide">Signature Collections</p>
-                  <p className="text-gray-400 font-light text-sm mb-8 leading-relaxed">
-                    The evolution of Central Park Damansara continues. New exclusive residential phases are currently in planning. 
-                  </p>
-                  <div className="mt-auto">
-                    <a 
-                      href="#register"
-                      className="inline-flex items-center text-sm font-medium text-nature-800 uppercase tracking-widest hover:text-nature-900 transition-colors"
-                    >
-                      Register for Updates <ArrowRight size={16} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-    </section>
 
       {/* Central Park Gallery Section */}
       <section id="gallery" className="py-24 bg-white overflow-hidden">
@@ -765,6 +625,237 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           )}
         </AnimatePresence>
       </section>
+
+      {/* Why Central Park Damansara */}
+      <section id="lifestyle" className="py-24 bg-[#F9F7F2]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <span className="text-nature-800 text-xs font-semibold uppercase tracking-[0.4em] mb-4 block">The Masterplan</span>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-nature-900 mb-8 tracking-tight leading-tight">A New Standard of Living</h2>
+            <div className="w-20 h-px bg-nature-800 mx-auto mb-8"></div>
+            <p className="text-gray-600 font-light leading-relaxed text-lg">
+              Discover a meticulously planned township that seamlessly blends the vibrancy of urban life with the tranquility of nature.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-nature-200/60">
+            <div className="group pt-12 md:pt-16 md:px-8 border-b md:border-b-0 md:border-r border-nature-200/60 pb-12 md:pb-0">
+              <div className="aspect-[4/5] overflow-hidden mb-8 relative">
+                <div className="absolute inset-0 border border-white/20 z-10 m-4"></div>
+                <img 
+                  src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=800&q=80" 
+                  alt="Waterfall Park" 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="text-left">
+                <span className="text-[10px] text-nature-800 uppercase tracking-[0.3em] mb-3 block font-semibold">Nature</span>
+                <h3 className="text-2xl font-serif text-nature-900 mb-4">10-Acre Waterfall Park</h3>
+                <p className="text-gray-500 font-light text-sm leading-relaxed">Your daily retreat. A sprawling green oasis featuring a cascading waterfall right at your doorstep.</p>
+              </div>
+            </div>
+            <div className="group pt-12 md:pt-16 md:px-8 border-b md:border-b-0 md:border-r border-nature-200/60 pb-12 md:pb-0">
+              <div 
+                className="aspect-[4/5] overflow-hidden mb-8 relative cursor-zoom-in group/zoom"
+                onClick={() => setSelectedImage("https://lh3.googleusercontent.com/d/1ZlYan8s3GdaPDNu1XcQGfen2evYrsvi6")}
+              >
+                <div className="absolute inset-0 border border-white/20 z-10 m-4"></div>
+                <div className="absolute top-6 right-6 z-20 bg-white/90 backdrop-blur-md p-2 rounded-full opacity-0 group-hover/zoom:opacity-100 transition-all duration-300 transform translate-y-2 group-hover/zoom:translate-y-0 shadow-lg">
+                  <Maximize size={16} className="text-nature-900" />
+                </div>
+                <img 
+                  src="https://lh3.googleusercontent.com/d/1ZlYan8s3GdaPDNu1XcQGfen2evYrsvi6" 
+                  alt="Prime Connectivity Map | Central Park Damansara Accessibility Petaling Jaya" 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="text-left">
+                <span className="text-[10px] text-nature-800 uppercase tracking-[0.3em] mb-3 block font-semibold">Location</span>
+                <h3 className="text-2xl font-serif text-nature-900 mb-4">Prime Connectivity</h3>
+                <p className="text-gray-500 font-light text-sm leading-relaxed">Seamlessly connected to LDP, Penchala Link, and DASH highways. Minutes away from 1 Utama and IKEA.</p>
+              </div>
+            </div>
+            <div className="group pt-12 md:pt-16 md:px-8 pb-12 md:pb-0">
+              <div className="aspect-[4/5] overflow-hidden mb-8 relative">
+                <div className="absolute inset-0 border border-white/20 z-10 m-4"></div>
+                <img 
+                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" 
+                  alt="Integrated Township" 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="text-left">
+                <span className="text-[10px] text-nature-800 uppercase tracking-[0.3em] mb-3 block font-semibold">Community</span>
+                <h3 className="text-2xl font-serif text-nature-900 mb-4">Integrated Township</h3>
+                <p className="text-gray-500 font-light text-sm leading-relaxed">A self-sustaining ecosystem of residential, commercial, and retail spaces designed for absolute convenience.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Project Status & Future Projects CTA */}
+      <section id="collection" className="py-24 bg-nature-900 text-white overflow-hidden relative">
+        {/* Background Decorative Element */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-nature-800/20 skew-x-12 translate-x-1/2"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <span className="text-nature-100 text-xs font-semibold uppercase tracking-[0.4em] mb-6 block">The Residences</span>
+              <h2 className="font-serif text-4xl md:text-5xl mb-8 tracking-tight leading-tight">The Collection</h2>
+              <p className="text-nature-100/80 font-light mb-10 leading-relaxed text-lg max-w-xl">
+                Central Park Damansara is a rapidly evolving 65-acre masterplan. While many phases have found their owners, new opportunities await those seeking a refined urban lifestyle.
+              </p>
+              
+              <div className="space-y-10">
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 lg:p-10 rounded-sm shadow-inner">
+                  <div className="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
+                    <h4 className="text-xs font-semibold uppercase tracking-[0.3em] text-nature-100">Current Availability</h4>
+                    <span className="flex h-2 w-2 relative">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-nature-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-nature-500"></span>
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-1 gap-x-12">
+                    <button 
+                      onClick={() => onNavigate('/project/the-aldenz')}
+                      className="flex justify-between items-center group border-b border-white/5 pb-2 hover:border-white/30 transition-all duration-300"
+                    >
+                      <span className="text-base font-medium tracking-wide group-hover:translate-x-1 transition-transform">The Aldenz</span>
+                      <span className="text-[10px] px-4 py-1.5 bg-white text-nature-900 rounded-full uppercase font-black tracking-widest shadow-lg group-hover:scale-105 transition-transform animate-pulse">New Launch</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-[10px] font-semibold uppercase tracking-[0.4em] text-nature-100/40 mb-6 flex items-center">
+                    <span className="w-8 h-px bg-white/10 mr-4"></span>
+                    Fully Sold Out Phases
+                  </h4>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    {['D’Terra', 'D’Tessera', 'D’Quince', 'D’Vervain', 'D’Cosmos', 'D’Vine', 'D’Erica', 'D’Clover'].map((sold) => (
+                      <div key={sold} className="relative group overflow-hidden">
+                        <div className="px-4 py-3 bg-white/5 border border-white/10 text-[10px] uppercase tracking-[0.2em] text-nature-100/60 transition-all duration-300 group-hover:bg-white/10 flex flex-col gap-1">
+                          <span className="font-medium text-nature-100/80">{sold}</span>
+                          <span className="text-[9px] text-red-400/80 font-bold flex items-center">
+                            <span className="w-1 h-1 bg-red-500 rounded-full mr-1.5"></span>
+                            Sold Out
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-10 lg:p-16 text-nature-900 shadow-2xl relative">
+              <div className="absolute top-0 left-0 w-2 h-full bg-nature-800"></div>
+              <h3 className="font-serif text-3xl mb-6 tracking-tight">Register for Priority Access</h3>
+              <p className="text-gray-500 font-light mb-8 leading-relaxed">
+                Be the first to receive exclusive updates, floor plans, and early bird privileges for our highly anticipated future residential launches and remaining units.
+              </p>
+              <a 
+                href="https://wa.me/601111697251?text=%5BCPD%5D%20Hi%2C%20I%20am%20interested%20in%20Central%20Park%20Damansara.%20Send%20me%20Upcoming%20project%20details.%0A%0AMy%20name%20is" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block w-full text-center bg-nature-900 text-white px-8 py-4 text-sm font-medium uppercase tracking-[0.2em] hover:bg-nature-800 transition-colors duration-300"
+              >
+                Secure Your Priority Spot
+              </a>
+              <p className="text-[10px] text-gray-400 mt-6 text-center italic uppercase tracking-widest">Limited slots available for upcoming phases</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-24 bg-nature-50 border-y border-nature-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <span className="text-nature-800 text-xs font-semibold uppercase tracking-[0.3em] mb-4 block">Project Status</span>
+            <h2 className="font-serif text-4xl md:text-5xl text-nature-900 mb-6 tracking-tight">The Vision <br/><span className="italic font-light text-nature-800/60">Continues</span></h2>
+            <p className="text-gray-500 font-light leading-relaxed">
+              Explore our diverse portfolio of premium residences, each thoughtfully designed to cater to different lifestyle needs.
+            </p>
+          </div>
+
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl w-full">
+              {PROJECTS.map((project) => (
+                <div key={project.id} className="group bg-white border border-nature-100 overflow-hidden hover:border-nature-800 transition-all duration-500 flex flex-col">
+                  <div 
+                    className="relative h-72 overflow-hidden cursor-pointer"
+                    onClick={() => onNavigate(`/project/${project.id}`)}
+                  >
+                    <div className="absolute inset-0 bg-nature-900/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                    <img 
+                      src={project.image} 
+                      alt={(project as any).alt || project.name} 
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute top-4 right-4 z-20">
+                      <span className="text-[10px] px-3 py-1 bg-nature-900 text-white font-bold uppercase tracking-widest rounded-full">Active Launch</span>
+                    </div>
+                  </div>
+                  <div className="p-8 flex flex-col flex-grow">
+                    <h3 className="text-2xl font-serif text-nature-900 mb-2">{project.name}</h3>
+                    <p className="text-nature-800 font-medium text-sm mb-4 tracking-wide">{project.specs}</p>
+                    <p className="text-gray-500 font-light text-sm mb-8 leading-relaxed line-clamp-3">{project.desc}</p>
+                    <div className="mt-auto">
+                      <button 
+                        onClick={() => onNavigate(`/project/${project.id}`)}
+                        className="inline-flex items-center text-sm font-medium text-nature-900 uppercase tracking-widest group-hover:text-nature-700 transition-colors"
+                      >
+                        Discover {project.name} <ArrowRight size={16} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+              {/* Future Projects Card */}
+              <div className="group bg-nature-50 border border-nature-100 overflow-hidden hover:border-nature-800 transition-all duration-500 relative flex flex-col">
+                <div className="relative h-72 overflow-hidden bg-nature-200">
+                  <div className="absolute inset-0 bg-nature-900/40 z-10" />
+                  <img 
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" 
+                    alt="Future Development" 
+                    className="w-full h-full object-cover grayscale opacity-60 transform group-hover:scale-110 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 z-20 flex items-center justify-center">
+                    <div className="text-center px-6">
+                      <span className="text-white/60 text-[10px] uppercase tracking-[0.4em] mb-2 block">Coming Soon</span>
+                      <h4 className="text-white text-3xl font-serif">Future <br/>Phases</h4>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-8 flex flex-col flex-grow">
+                  <h3 className="text-2xl font-serif text-nature-900 mb-2 italic opacity-60">Upcoming Residences</h3>
+                  <p className="text-nature-800 font-medium text-sm mb-4 tracking-wide">Signature Collections</p>
+                  <p className="text-gray-400 font-light text-sm mb-8 leading-relaxed">
+                    The evolution of Central Park Damansara continues. New exclusive residential phases are currently in planning. 
+                  </p>
+                  <div className="mt-auto">
+                    <a 
+                      href="#register"
+                      className="inline-flex items-center text-sm font-medium text-nature-800 uppercase tracking-widest hover:text-nature-900 transition-colors"
+                    >
+                      Register for Updates <ArrowRight size={16} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
 
       {/* Pet Friendly Section Highlights */}
       <section id="pet-friendly" className="py-20 lg:py-32 bg-[#f4f7f2] overflow-hidden relative">
@@ -948,6 +1039,13 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                       <p className="text-base lg:text-lg font-light group-hover:text-white transition-colors">+6011 1169 7251</p>
                     </div>
                   </a>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="w-px h-10 bg-[#C5A059]/30"></div>
+                  <p className="text-[10px] lg:text-[11px] font-medium text-[#C5A059]/80 uppercase tracking-[0.4em] leading-relaxed max-w-[200px]">
+                    Last chance to grab RM5xxk condo in PJ
+                  </p>
                 </div>
               </div>
             </div>

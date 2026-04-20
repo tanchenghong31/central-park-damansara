@@ -771,10 +771,18 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
           </p>
           <button 
             onClick={() => onNavigate(`/#register?project=${project.id}`)} 
-            className="inline-block border border-white text-white px-8 lg:px-10 py-3 lg:py-4 text-[10px] lg:text-sm font-medium uppercase tracking-[0.2em] hover:bg-white hover:text-nature-900 transition-colors duration-300"
+            className="inline-block border border-white text-white px-8 lg:px-10 py-3 lg:py-4 text-[10px] lg:text-sm font-medium uppercase tracking-[0.2em] hover:bg-white hover:text-nature-900 transition-colors duration-300 mb-8"
           >
             Register Now
           </button>
+          <div className="flex justify-center">
+            <div className="flex items-center space-x-4">
+              <div className="w-px h-10 bg-[#C5A059]/30"></div>
+              <p className="text-[10px] lg:text-[11px] font-medium text-[#C5A059]/80 uppercase tracking-[0.4em] leading-relaxed max-w-[200px] text-left">
+                Last chance to grab RM5xxk condo in PJ
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
