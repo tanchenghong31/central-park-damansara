@@ -5,9 +5,23 @@ import ProjectPage from './pages/ProjectPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import WhatsAppButton from './components/WhatsAppButton';
+import RegistrationModal from './components/RegistrationModal';
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.hash || '#/');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    // Show modal after 8 seconds (luxury timing) if not shown this session
+    const shown = sessionStorage.getItem('registration_modal_shown');
+    if (!shown) {
+      const timer = setTimeout(() => {
+        setIsModalOpen(true);
+        sessionStorage.setItem('registration_modal_shown', 'true');
+      }, 7000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -115,6 +129,7 @@ function App() {
         )}
       </motion.div>
       <WhatsAppButton />
+      <RegistrationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </AnimatePresence>
   );
 }
