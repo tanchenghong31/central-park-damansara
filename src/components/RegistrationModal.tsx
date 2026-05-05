@@ -139,6 +139,23 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, onClose }
                       />
                     </div>
 
+                    <div className="flex items-start pt-2">
+                      <div className="flex items-center h-5">
+                        <input 
+                          id="modal-privacy-agree" 
+                          name="modal-privacy-agree" 
+                          type="checkbox" 
+                          required
+                          className="w-4 h-4 mt-0.5 border-nature-300 rounded text-nature-800 focus:ring-nature-800" 
+                        />
+                      </div>
+                      <div className="ml-3 text-xs text-nature-600 font-light">
+                        <label htmlFor="modal-privacy-agree">
+                          I agree to the <a href="/#/privacy-policy" onClick={() => onClose()} className="underline text-nature-900">Privacy Policy</a> and consent to be contacted.
+                        </label>
+                      </div>
+                    </div>
+
                     <button
                       type="submit"
                       disabled={isSubmitting}

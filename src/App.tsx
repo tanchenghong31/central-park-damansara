@@ -12,14 +12,11 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    // Show modal after 15 seconds if not shown this session
-    const shown = sessionStorage.getItem('registration_modal_shown');
-    if (!shown) {
-      const timer = setTimeout(() => {
-        setIsModalOpen(true);
-        sessionStorage.setItem('registration_modal_shown', 'true');
-      }, 15000);
-      return () => clearTimeout(timer);
+    // Check if URL indicates an immediate registration intent
+    const hasRegisterIntent = window.location.hash.includes('/register') || window.location.search.includes('register=true');
+    
+    if (hasRegisterIntent) {
+      setIsModalOpen(true);
     }
   }, []);
 
@@ -40,7 +37,8 @@ function App() {
   // Determine the actual page component to render based on the primary hash path
   // ignoring any subsequent anchors within that page
   const getPageBase = (hash: string) => {
-    const parts = hash.split('#').filter(Boolean);
+    const hashWithoutQuery = hash.split('?')[0];
+    const parts = hashWithoutQuery.split('#').filter(Boolean);
     const firstPart = parts[0] || '/';
     
     // If the first part is an anchor (doesn't start with /), it's the home page
@@ -56,7 +54,8 @@ function App() {
   
   // determine the page key for animation
   const getAnimationKey = (hash: string) => {
-    const parts = hash.split('#').filter(Boolean);
+    const hashWithoutQuery = hash.split('?')[0];
+    const parts = hashWithoutQuery.split('#').filter(Boolean);
     const firstPart = parts[0] || '/';
     
     // Root anchors share the same base page
@@ -80,27 +79,34 @@ function App() {
 
   // Handle scroll logic
   useEffect(() => {
-    const hashParts = currentPath.split('#').filter(Boolean);
+    const hashWithoutQuery = currentPath.split('?')[0];
+    const hashParts = hashWithoutQuery.split('#').filter(Boolean);
     const firstPart = hashParts[0] || '/';
     
-    // Case 1: Simple root or page navigation (e.g. #/ or #/project/id)
-    if (hashParts.length === 1 && firstPart.startsWith('/')) {
+    let querySection = null;
+    if (currentPath.includes('?')) {
+      const hashSearch = currentPath.split('?')[1];
+      const hashParams = new URLSearchParams(hashSearch);
+      querySection = hashParams.get('section');
+    }
+    
+    const anchorId = querySection || (hashParts.length > 1 ? hashParts[hashParts.length - 1] : null);
+
+    // Case 1: Simple root or page navigation without anchor
+    if (!anchorId && firstPart.startsWith('/')) {
       window.scrollTo({ top: 0, behavior: 'instant' });
     } 
-    // Case 2: Anchors (e.g. #lifestyle, #/project/id#lifestyle)
-    else {
-      const anchorId = hashParts[hashParts.length - 1];
-      if (anchorId && !anchorId.startsWith('/')) {
-        const scrollWithRetry = (retryCount = 0) => {
-          const element = document.getElementById(anchorId);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-          } else if (retryCount < 5) {
-            setTimeout(() => scrollWithRetry(retryCount + 1), 100);
-          }
-        };
-        scrollWithRetry();
-      }
+    // Case 2: Anchors (e.g. #lifestyle, #/project/id#lifestyle, or ?section=lifestyle)
+    else if (anchorId) {
+      const scrollWithRetry = (retryCount = 0) => {
+        const element = document.getElementById(anchorId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        } else if (retryCount < 5) {
+          setTimeout(() => scrollWithRetry(retryCount + 1), 100);
+        }
+      };
+      scrollWithRetry();
     }
   }, [currentPath]); // Run on every hash change
 

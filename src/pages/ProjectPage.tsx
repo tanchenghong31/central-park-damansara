@@ -4,7 +4,7 @@ import {
   TreePine, Shield, Smartphone, Leaf, 
   Building2, Laptop, Sun, Trash2, 
   Crown, Key, Diamond, BellRing, PawPrint, Coffee,
-  ChevronLeft, ChevronRight, Menu, X, Phone, Maximize
+  ChevronLeft, ChevronRight, Menu, X, Phone, Maximize, ShieldCheck
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PROJECTS } from '../data/projects';
@@ -111,10 +111,10 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
               </button>
 
               <button 
-                onClick={() => scrollToSection('vr-tour')}
+                onClick={() => scrollToSection('digital-showroom')}
                 className="text-[10px] font-bold text-nature-900/60 hover:text-nature-900 transition-all duration-300 uppercase tracking-[0.1em] xl:tracking-[0.2em] hover:tracking-[0.25em]"
               >
-                VR Room Tour
+                Digital Showroom
               </button>
 
               <button 
@@ -241,7 +241,7 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
                     <div className="flex flex-col space-y-3 text-left">
                       <button onClick={() => {setIsMenuOpen(false); onNavigate('/')}} className="text-left text-xl font-serif text-nature-900 tracking-tight py-1">Home</button>
                       <button onClick={() => {setIsMenuOpen(false); scrollToSection('features')}} className="text-left text-xl font-serif text-nature-900 tracking-tight py-1">Project Features</button>
-                      <button onClick={() => {setIsMenuOpen(false); scrollToSection('vr-tour')}} className="text-left text-xl font-serif text-nature-900 tracking-tight py-1">VR Room Tour</button>
+                      <button onClick={() => {setIsMenuOpen(false); scrollToSection('digital-showroom')}} className="text-left text-xl font-serif text-nature-900 tracking-tight py-1">Digital Showroom</button>
                       <button onClick={() => {setIsMenuOpen(false); scrollToSection('layouts')}} className="text-left text-xl font-serif text-nature-900 tracking-tight py-1">Layouts</button>
                       <button onClick={() => {setIsMenuOpen(false); scrollToSection('lifestyle')}} className="text-left text-xl font-serif text-nature-900 tracking-tight py-1">Facilities</button>
                       <button onClick={() => {setIsMenuOpen(false); scrollToSection('pet-friendly')}} className="text-left text-xl font-serif text-nature-900 tracking-tight py-1">Pet Friendly</button>
@@ -344,12 +344,12 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
         </div>
       </section>
 
-      {/* VR Tour Section */}
-      <section id="vr-tour" className="py-24 bg-white border-b border-nature-100">
+      {/* Digital Showroom Section */}
+      <section id="digital-showroom" className="py-24 bg-white border-b border-nature-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
           <span className="text-nature-800 text-xs font-semibold uppercase tracking-[0.3em] mb-4 block">Immersive Experience</span>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-nature-900 tracking-tight leading-tight mb-6">
-            Aldenz 360° VR Room Tour
+            Aldenz Digital Showroom
           </h2>
           <p className="text-gray-500 font-light text-lg max-w-2xl mx-auto leading-relaxed">
             Experience the sophisticated layout and premium finishes of your future home from anywhere in the world. 
@@ -359,8 +359,8 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
           <div className="relative w-full aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-nature-100 bg-nature-50">
             <iframe 
               src="https://framemakers.com.my/clients/aldenz/" 
-              title={`${project.name} 360 Virtual Reality Showroom Tour`}
-              aria-label="360 VR Tour of Aldenz Showroom"
+              title={`${project.name} Digital Showroom Interactive View`}
+              aria-label="Interactive View of Aldenz Showroom"
               className="absolute inset-0 w-full h-full border-0"
               allowFullScreen
             />
@@ -578,7 +578,7 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
           <div className="inline-block p-1 px-3 bg-nature-50 border border-nature-100 rounded-full mb-6">
             <span className="text-[10px] font-black text-nature-800 uppercase tracking-[0.3em]">Exclusive Preview 2026</span>
           </div>
-          <h3 className="font-serif text-3xl md:text-4xl text-nature-900 mb-8 tracking-tight">The last RM5xx K Condo in Petaling Jaya.</h3>
+          <h3 className="font-serif text-3xl md:text-4xl text-nature-900 mb-8 tracking-tight">The last RM6xx K Condo in Petaling Jaya.</h3>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <a 
               href={`https://wa.me/601111697251?text=${encodeURIComponent(`[CTA] Hi, can i get the Early Bird Prices for ${project.name}\n\nMy name is`)}`}
@@ -784,11 +784,17 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
           >
             Register Now
           </a>
+          <div className="flex justify-center mb-8">
+            <div className="flex items-center space-x-3 text-white">
+              <ShieldCheck size={18} className="text-[#C5A059]" />
+              <span className="text-[10px] tracking-wider font-medium text-white/90">Your information is secure and private. 100% PDPA Compliant.</span>
+            </div>
+          </div>
           <div className="flex justify-center">
             <div className="flex items-center space-x-4">
               <div className="w-px h-10 bg-[#C5A059]/30"></div>
               <p className="text-[10px] lg:text-[11px] font-medium text-[#C5A059]/80 uppercase tracking-[0.4em] leading-relaxed max-w-[200px] text-left">
-                Last chance to grab RM5xxk condo in PJ
+                Last chance to grab RM6xxk condo in PJ
               </p>
             </div>
           </div>
@@ -807,9 +813,16 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
                 onClick={() => onNavigate('/')}
                 referrerPolicy="no-referrer"
               />
-              <p className="text-nature-100 font-light max-w-sm leading-relaxed">
+              <p className="text-nature-100 font-light max-w-sm leading-relaxed mb-6">
                 A visionary township redefining urban living through nature-inspired design and unparalleled connectivity in the heart of Damansara.
               </p>
+              <div className="text-nature-100 font-light text-sm max-w-sm leading-relaxed space-y-2">
+                <p className="font-medium text-white mb-2">Central Park Damansara Sales Gallery</p>
+                <div className="flex items-start space-x-2">
+                  <MapPin size={16} className="mt-1 flex-shrink-0" />
+                  <p>12, Jalan PJU 8/1, Damansara Perdana, 47820 Petaling Jaya, Selangor, Malaysia</p>
+                </div>
+              </div>
             </div>
             <div>
               <h4 className="text-sm font-medium uppercase tracking-widest mb-6 text-white">The Collection</h4>
@@ -834,9 +847,49 @@ export default function ProjectPage({ projectId, onNavigate }: ProjectPageProps)
               </ul>
             </div>
           </div>
+          <div className="pt-8 border-t border-nature-800 mb-8">
+            <h4 className="text-[10px] font-medium uppercase tracking-[0.2em] mb-4 text-nature-400">Popular Searches</h4>
+            <div className="flex flex-wrap gap-x-4 gap-y-2 text-[9px] text-nature-100/40">
+              <span>Central Park Damansara</span>
+              <span>Damansara Central Park</span>
+              <span>D'Erica</span>
+              <span>Luxury Condominium</span>
+              <span>Pet Friendly Condo</span>
+              <span>Damansara New Project</span>
+              <span>New Condo in PJ</span>
+              <span>PJ New Project</span>
+              <span>Aldenz Residence</span>
+              <span>Aldenz Residences</span>
+              <span>Aldenz</span>
+              <span>The Aldenz</span>
+              <span>Aldenz New Launch</span>
+              <span>Aldenz Price</span>
+              <span>Aldenz Damansara</span>
+              <span>Aldenz PJ</span>
+              <span>Aldenz Condo</span>
+              <span>Aldenz Central Park Damansara</span>
+              <span>Aldenz Layout</span>
+              <span>Aldenz Invest</span>
+              <span>Aldenz Pet Friendly</span>
+              <span>Aldenz Completion</span>
+              <span>Aldenz Developer</span>
+              <span>Aldenz Location</span>
+              <span>Aldenz Condominium</span>
+              <span>Aldenz Unit Available</span>
+              <span>Aldenz Showroom</span>
+              <span>Aldenz Sales Gallery</span>
+              <span>Aldenz MRT</span>
+              <span>Aldenz CPD</span>
+            </div>
+          </div>
           <div className="pt-8 border-t border-nature-800 flex flex-col md:flex-row justify-between items-center">
             <p className="text-nature-100 font-light text-xs mb-4 md:mb-0">
               &copy; {new Date().getFullYear()} Central Park Damansara. All rights reserved.
+              <br className="hidden md:block" />
+              <span className="text-nature-400 mt-2 block text-[10px] leading-relaxed">
+                Disclaimer: This is a marketing website operated by YuenYee / IQI, an authorized real estate agency.<br className="hidden md:block" />
+                This is not the official developer website. The official developer for Central Park Damansara is Exsim.
+              </span>
             </p>
             <div className="flex space-x-6">
               <button 

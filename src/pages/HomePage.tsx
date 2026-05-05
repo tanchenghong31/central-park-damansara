@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, MapPin, Phone, ArrowRight, Leaf, Shield, Map, ChevronDown, Maximize, Globe, PenTool, Users, PawPrint, Coffee, Crown } from 'lucide-react';
+import { Menu, X, MapPin, Phone, ArrowRight, Leaf, Shield, Map, ChevronDown, Maximize, Globe, PenTool, Users, PawPrint, Coffee, Crown, ShieldCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 const HERO_SLIDES = [
   {
     image: "https://lh3.googleusercontent.com/d/1S8O56nUr_Wjk1kpfmACYOTv25a3Davho",
-    alt: "Aldenz Central Park Damansara | The last RM5xxk Luxury Condo in Petaling Jaya",
+    alt: "Aldenz Central Park Damansara | The last RM6xxk Luxury Condo in Petaling Jaya",
     title: "The Heart of Damansara",
     subtitle: "Unmatched connectivity in PJ's most sought-after address. Your sanctuary in the city.",
-    tagline: "FROM RM5xx k",
+    tagline: "FROM RM6xx k",
     cta: "Explore Residences",
     target: "projects"
   },
@@ -17,7 +17,7 @@ const HERO_SLIDES = [
     alt: "Central Park Damansara Integrated Township Waterfall Park",
     title: "Central Park Damansara",
     subtitle: "Discover PJ's premier pet-friendly community, featuring 65 acres of greenery and contemporary urban design.",
-    tagline: "FROM RM5xx k",
+    tagline: "FROM RM6xx k",
     cta: "View Collection",
     target: "pet-friendly"
   },
@@ -26,7 +26,7 @@ const HERO_SLIDES = [
     alt: "Large 3 to 4 Bedroom Unit Layouts in Petaling Jaya",
     title: "Spacious KL Homes",
     subtitle: "From practical 3-bedroom units to larger 4+1 layouts, tailored for every stage of life.",
-    tagline: "FROM RM5xx k",
+    tagline: "FROM RM6xx k",
     cta: "Compare Layouts",
     target: "projects"
   }
@@ -1044,7 +1044,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 <div className="flex items-center space-x-4">
                   <div className="w-px h-10 bg-[#C5A059]/30"></div>
                   <p className="text-[10px] lg:text-[11px] font-medium text-[#C5A059]/80 uppercase tracking-[0.4em] leading-relaxed max-w-[200px]">
-                    Last chance to grab RM5xxk condo in PJ
+                    Last chance to grab RM6xxk condo in PJ
                   </p>
                 </div>
               </div>
@@ -1132,6 +1132,24 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                     </select>
                   </div>
                 </div>
+
+                <div className="flex items-start mt-6 mb-2">
+                  <div className="flex items-center h-5">
+                    <input 
+                      id="privacy-policy-agree" 
+                      name="privacy-policy-agree" 
+                      type="checkbox" 
+                      required
+                      className="w-4 h-4 mt-0.5 border-nature-300 rounded text-nature-800 focus:ring-nature-800" 
+                    />
+                  </div>
+                  <div className="ml-3 text-xs text-nature-700 font-light">
+                    <label htmlFor="privacy-policy-agree">
+                      I have read and agree to the <button type="button" onClick={() => onNavigate('/privacy-policy')} className="underline">Privacy Policy</button>. I consent to be contacted regarding my inquiry.
+                    </label>
+                  </div>
+                </div>
+
                 <button 
                   type="submit" 
                   disabled={isSubmitting}
@@ -1139,6 +1157,10 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit Registration'}
                 </button>
+                <div className="flex items-center space-x-3 pt-4">
+                  <ShieldCheck size={18} className="text-nature-700" />
+                  <span className="text-[10px] text-nature-700 font-medium tracking-wider">Your information is secure and private. 100% PDPA Compliant.</span>
+                </div>
               </form>
             </div>
           </div>
@@ -1157,9 +1179,16 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 referrerPolicy="no-referrer"
               />
-              <p className="text-nature-100 font-light max-w-sm leading-relaxed">
+              <p className="text-nature-100 font-light max-w-sm leading-relaxed mb-6">
                 A visionary township redefining urban living through nature-inspired design and unparalleled connectivity in the heart of Damansara.
               </p>
+              <div className="text-nature-100 font-light text-sm max-w-sm leading-relaxed space-y-2">
+                <p className="font-medium text-white mb-2">Central Park Damansara Sales Gallery</p>
+                <div className="flex items-start space-x-2">
+                  <MapPin size={16} className="mt-1 flex-shrink-0" />
+                  <p>12, Jalan PJU 8/1, Damansara Perdana, 47820 Petaling Jaya, Selangor, Malaysia</p>
+                </div>
+              </div>
             </div>
             <div>
               <h4 className="text-sm font-medium uppercase tracking-widest mb-6 text-white">The Collection</h4>
@@ -1177,9 +1206,49 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               </ul>
             </div>
           </div>
+          <div className="pt-8 border-t border-nature-800 mb-8">
+            <h4 className="text-[10px] font-medium uppercase tracking-[0.2em] mb-4 text-nature-400">Popular Searches</h4>
+            <div className="flex flex-wrap gap-x-4 gap-y-2 text-[9px] text-nature-100/40">
+              <span>Central Park Damansara</span>
+              <span>Damansara Central Park</span>
+              <span>D'Erica</span>
+              <span>Luxury Condominium</span>
+              <span>Pet Friendly Condo</span>
+              <span>Damansara New Project</span>
+              <span>New Condo in PJ</span>
+              <span>PJ New Project</span>
+              <span>Aldenz Residence</span>
+              <span>Aldenz Residences</span>
+              <span>Aldenz</span>
+              <span>The Aldenz</span>
+              <span>Aldenz New Launch</span>
+              <span>Aldenz Price</span>
+              <span>Aldenz Damansara</span>
+              <span>Aldenz PJ</span>
+              <span>Aldenz Condo</span>
+              <span>Aldenz Central Park Damansara</span>
+              <span>Aldenz Layout</span>
+              <span>Aldenz Invest</span>
+              <span>Aldenz Pet Friendly</span>
+              <span>Aldenz Completion</span>
+              <span>Aldenz Developer</span>
+              <span>Aldenz Location</span>
+              <span>Aldenz Condominium</span>
+              <span>Aldenz Unit Available</span>
+              <span>Aldenz Showroom</span>
+              <span>Aldenz Sales Gallery</span>
+              <span>Aldenz MRT</span>
+              <span>Aldenz CPD</span>
+            </div>
+          </div>
           <div className="pt-8 border-t border-nature-800 flex flex-col md:flex-row justify-between items-center">
             <p className="text-nature-100 font-light text-xs mb-4 md:mb-0">
               &copy; {new Date().getFullYear()} Central Park Damansara. All rights reserved.
+              <br className="hidden md:block" />
+              <span className="text-nature-400 mt-2 block text-[10px] leading-relaxed">
+                Disclaimer: This is a marketing website operated by YuenYee / IQI, an authorized real estate agency.<br className="hidden md:block" />
+                This is not the official developer website. The official developer for Central Park Damansara is Exsim.
+              </span>
             </p>
             <div className="flex space-x-6">
               <button 
